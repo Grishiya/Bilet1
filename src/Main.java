@@ -1,28 +1,17 @@
+import java.util.Arrays;
+
 public class Main {
-    //    public static void returnArray(int[] returnArray) {
-////        for (int i=array.length-1;i>=0;i--) {
-////            System.out.println(array[i]);
-//
-//        for (int i = 0; i < returnArray.length / 2; i++) {
-//            int reverseArray = returnArray[i];
-//            returnArray[i] = returnArray[returnArray.length - 1 - i];
-//            returnArray[returnArray.length - 1 - i] = reverseArray;
-//            System.out.println(returnArray[i]);
-//
-//        }
-//    }
-    public static int[] array(int[] arr) {
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.println(arr[i]);
-        }
-        return arr;
-    }
-        public static void main (String[]args){
-//        int[] arr = {1, 2, 3, 4, 5, 6};
-//        returnArray(arr);
-            int[] arr = {1, 2, 3};
-            array(arr);
-        }
-
+    public static void main(String[] args) {
+        int[] arrayArray = {1, 2, 3, 4, 5, 6, 7, 11, 8, 9, 10, 11};
+        System.out.println(Arrays.toString(flipTheArray(arrayArray)));
     }
 
+    public static int[] flipTheArray(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int tmp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = tmp;
+        }
+        return array;
+    }
+}
